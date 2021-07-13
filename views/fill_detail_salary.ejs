@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <td colspan="1">
+                        <form class="well form-horizontal" action="/fill_detail_salary" method="POST">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Full Name</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group"><span class="input-group-addon"><i
+                                                    class="glyphicon glyphicon-user"></i></span><input id="fullName"
+                                                name="fullName" placeholder="Full Name" class="form-control"
+                                                required="true" value="" type="text"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Date of joining</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group"><span class="input-group-addon"><i
+                                                    class="glyphicon glyphicon-calendar"></i></span><input id="dateOfjoining"
+                                                name="dateOfjoining" placeholder="Date of joining" class="form-control"
+                                                required="true" value="" type="date"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                        <label class="col-md-4 control-label">Current Date</label>
+                                        <div class="col-md-8 inputGroupContainer">
+                                            <div class="input-group"><span class="input-group-addon"><i
+                                                        class="glyphicon glyphicon-calendar"></i></span><input id="current_date"
+                                                    name="current_date" placeholder="" class="form-control"
+                                                    required="true" value="" type="date"></div>
+                                        </div>
+                                    </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Designation</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group"><span class="input-group-addon"><i
+                                                    class="glyphicon glyphicon-education"></i></span><input id="designation"
+                                                name="designation" placeholder="Designation" class="form-control"
+                                                required="true" value="" type="text"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">No of days payable</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group"><span class="input-group-addon"><i
+                                                    class="glyphicon "></i></span><input id="totalpayableDays"
+                                                name="totalpayableDays" placeholder="No of days payable" class="form-control" required="true"
+                                                value="" type="number"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Basic</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group price"><span class="input-group-addon"><i
+                                                    class="glyphicon"></i></span><input id="basic"
+                                                name="basic" placeholder="Basic" class="form-control"
+                                                required="true"  type="number"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">HRA</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group price"><span class="input-group-addon"><i
+                                                    class="glyphicon"></i></span><input id="hra"
+                                                name="hra" placeholder="hra" class="form-control"
+                                                required="true"  type="number"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Medical</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group"><span class="input-group-addon"><i
+                                                    class="glyphicon price "></i></span><input id="medical"
+                                                name="medical" placeholder="Medical" class="form-control"
+                                                required="true"  type="number"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Transport Allowance</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group price"><span class="input-group-addon"><i
+                                                    class="glyphicon-glyphicon-plane"></i></span><input id="transport_allowance"
+                                                name="transport_allowance" placeholder="Transport Allowance" class="form-control" required="true"
+                                                type="number"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Other Allowance</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group"><span class="input-group-addon"><i
+                                                    class="glyphicon-glyphicon-plane price"></i></span><input id="other_allowance"
+                                                name="other_allowance" placeholder="other_allowance" class="form-control" required="true"
+                                                 type="number"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Incentives / Full and final adjustment</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group"><span class="input-group-addon"><i
+                                                    class="glyphicon-glyphicon-plane price"></i></span><input id="incentives"
+                                                name="incentives" placeholder="Incentives" class="form-control" required="true"
+                                                type="number"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                        <label class="col-md-4 control-label">total= </label>
+                                        <div class="col-md-6 inputGroupContainer">
+                                            <div class="input-group"><span class="input-group-addon"><i
+                                                        class="glyphicon-glyphicon-plane"></i></span><input id="total"
+                                                    name="total" placeholder="total" class="form-control" required="true"
+                                                     type="number">
+                                           </div>
+                                        </div>
+                                        <button type="button" id="calculate_total_btn" class="btn-primary">Calculate</button>
+                                    </div>
+                                    <div class="form-group">
+                                            <label class="col-md-4 control-label">Total (A)
+                                                </label>
+                                            <div class="col-md-8 inputGroupContainer">
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                            class="glyphicon-glyphicon-plane"></i></span><input id="total_a"
+                                                        name="total_a" placeholder="Total (A)" class="form-control" required="true"
+                                                        value="" type="number"></div>
+                                            </div>
+                                        </div>
+                            </fieldset>
+                    
+                    </td>
+                    <td colspan="1">
+                        <div class="well form-horizontal">
+                           <fieldset>
+                              <div class="form-group">
+                                 <label class="col-md-4 control-label">Leave Status</label>
+                                 <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon"></i></span>
+                                        <input id="leave_status" name="leave_status" placeholder="Leave Status" class="form-control" required="true" value="" type="text"></div>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="col-md-4 control-label">leave deduction</label>
+                                 <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon ">
+
+                                    </i></span>
+                                    <input id="leave_deduction" name="leave_deduction" placeholder="leave deduction" class="form-control" required="true" value="" type="number"></div>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="col-md-4 control-label">PF Deduction Employee</label>
+                                 <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon">
+                                        <i class="glyphicon "></i></span>
+                                        <input id="pf_deduction_employee" name="pf_deduction_employee" placeholder="PF Deduction Employee" class="form-control" required="true" value="" type="number"></div>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="col-md-4 control-label">PF Deduction Employer</label>
+                                 <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon">
+                                        <i class="glyphicon"></i></span>
+                                        <input id="pf_deduction_employer" name="pf_deduction_employer" placeholder="PF Deduction Employer" class="form-control" required="true" value="" type="number"></div>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="col-md-4 control-label">Advance if any</label>
+                                 <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon">
+                                        <i class="glyphicon "></i></span>
+                                        <input id="advance_if_any" name="advance_if_any" placeholder="Advance if any" class="form-control" required="true" value="" type="number"></div>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="col-md-4 control-label">EWF</label>
+                                 <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon">
+                                        <i class="glyphicon"></i></span>
+                                        <input id="ewf" name="ewf" placeholder="EWF" class="form-control" required="true" value="" type="number"></div>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                    <label class="col-md-4 control-label">TDS</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                       <div class="input-group"><span class="input-group-addon">
+                                           <i class="glyphicon"></i></span>
+                                           <input id="tds" name="tds" placeholder="TDS" class="form-control" required="true" value="" type="number"></div>
+                                    </div>
+                                 </div>
+                                 <div class="form-group">
+                                        <label class="col-md-4 control-label"> Total (B)
+                                            </label>
+                                        <div class="col-md-6 inputGroupContainer">
+                                           <div class="input-group"><span class="input-group-addon">
+                                               <i class="glyphicon"></i></span>
+                                               <input id="total_b" name="total_b" placeholder="Total (B)" class="form-control" required="true" value="" type="number"></div>
+                                      
+                                            </div>
+                                            <button id="calculte_total_deduction" type="button" class="btn-primary">Calculate</button>
+                                     </div>
+                                     <div class="form-group">
+                                            <label class="col-md-4 control-label"> Final Salary
+                                                </label>
+                                            <div class="col-md-6 inputGroupContainer">
+                                               <div class="input-group"><span class="input-group-addon">
+                                                   <i class="glyphicon "></i></span>
+                                                   <input id="final_salary" name="final_salary" placeholder="Final Salary" class="form-control" required="true" value="" type="number"></div>
+                                            </div>
+                                            <button id="cal_final_salary_btn" type="button" class="btn-success">Calculate</button>
+                                         </div>
+                                         <button style="margin: 0 auto;padding: 0 auto " type="submit" class="btn btn-primary">Submit</button>  
+                           </fieldset>
+                          
+                        </div>
+                     </td>   
+                         
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+     
+</form> 
+<script>
+  $(document).ready(function() {
+      var total_a=0;
+      var total_b=0;
+    $("#calculate_total_btn").click(function(){
+  var basic = $('#basic').val();
+  var hra = $('#hra').val();
+  var medical = $('#medical').val();
+  var transport_allowance = $('#transport_allowance').val();
+  var other_allowance =  $('#other_allowance').val();
+  var incentives = $('#incentives').val();
+  total_a = Number(basic)+Number(hra)+Number(medical)+Number(transport_allowance)+Number(other_allowance)+Number(incentives);
+  document.getElementById("total").value = total_a;
+  document.getElementById("total_a").value = total_a;
+}); 
+$("#calculte_total_deduction").click(function(){
+  var leave_deduction = $('#leave_deduction').val();
+  var pf_deduction_employee = $('#pf_deduction_employee').val();
+  var pf_deduction_employer = $('#pf_deduction_employer').val();
+  var advance_if_any = $('#advance_if_any').val();
+  var ewf =  $('#ewf').val();
+  var tds = $('#tds').val();
+  total_b = Number(leave_deduction)+Number(pf_deduction_employee)+Number(pf_deduction_employer)+Number(advance_if_any)+Number(ewf)+Number(tds);
+  
+  document.getElementById("total_b").value = total_b;
+}); 
+
+$('#cal_final_salary_btn').click(function(){
+var total_one = $('#total_a').val();
+var total_two = $('#total_b').val();
+var final_sal = Number(total_one)-Number(total_two);
+document.getElementById("final_salary").value = final_sal;
+});
+
+
+
+
+});
+
+
+
+        </script>
+</body>
+
+</html>

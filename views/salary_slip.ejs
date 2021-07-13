@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.svg.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.svg.min.js"></script>
+    <style>
+        .table_div {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .table-bordered {
+            border: 1px solid rgb(10, 10, 10);
+        }
+
+        .table-bordered>tbody>tr>td,
+        .table-bordered>tbody>tr>th,
+        .table-bordered>tfoot>tr>td,
+        .table-bordered>tfoot>tr>th,
+        .table-bordered>thead>tr>td,
+        .table-bordered>thead>tr>th {
+            border: 2px solid rgb(10, 10, 10);
+        }
+
+        .table>tbody>tr>td {
+            padding: 5px;
+            line-height: 0.8;
+            vertical-align: top;
+            border-top: 2px solid rgb(10, 10, 10);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="table_div" id="table_div">
+        <b style="float: right"> DATE: <%= result.current_date%> </b><br>
+        <div class="text-center">
+            <b> Office.: </b>E-221, Industrial area, Phase-8B Mohali Punjab (India)
+        </div>
+        <table class="table table-striped table-bordered">
+            <tbody>
+                <b> Employee Detail </b>
+                <tr>
+                    <td colspan="5.5"><b> Name: <%= result.name%> </b></td>
+                    <td colspan="2.5"> <b> Date of Joining:</b> <%= result.dateOfjoining%></td>
+                </tr>
+                <tr>
+                    <td colspan="5.5"><b> Designation:  <%= result.designation%> </b></td>
+                    <td colspan="2.5"><b> No. of Days Payable: <%= result.no_of_days%> </b></td>
+                </tr>
+
+
+                <td class="text-center" colspan="20"><b> <u> SALARY SLIP FOR FEBRUARY- 2019 </u></b></td>
+
+
+                <tr>
+                    <td colspan="4"><b> Earnings (A) </b></td>
+                    <td> <b> Amount </b></td>
+                    <td> <b> Deduction (B) </b></td>
+                    <td><b> Amount </b></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><b> Basic</b></td>
+
+                    <td style="text-align: right"><%=result.basic %></td>
+                    <td><b> leave deduction</b></td>
+                    <td style="text-align: right"><%= result.leave_deduction%></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><b> HRA</b></td>
+
+                    <td style="text-align: right"><%= result.hra%></td>
+                    <td><b>PF Deduction Employee</b> </td>
+                    <td style="text-align: right"><%= result.pf_deduction_employee%></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><b> Medical</b></td>
+                    <td style="text-align: right"><%= result.medical%></td>
+                    <td><b> PF Deduction Employer</b></td>
+                    <td style="text-align: right"><%= result.pf_deduction_employer%></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><b> Transport Allowance</b></td>
+                    <td style="text-align: right"><%= result.transport_allowance%></td>
+                    <td><b> Advance if any</b></td>
+                    <td style="text-align: right"><%= result.advance_if_any%></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><b> Other Allowance</b></td>
+                    <td style="text-align: right"><%= result.other_allowance%></td>
+                    <td></td>
+                    <td style="text-align: right">0</td>
+                </tr>
+                <tr>
+                    <td colspan="3"><b> Incentives / Full and final adjustment</b></td>
+                    <td></td>
+                    <td style="text-align: right"><%= result.incentives%></td>
+                    <td><b> EWF</b></td>
+                    <td style="text-align: right"><%= result.ewf%></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><b> TDS</b></td>
+                    <td style="text-align: right"><%= result.tds%></td>
+                </tr>
+                <tr>
+                    <td><b> Leave Status</b></td>
+                    <td><b> CL</b></td>
+                    <td><b> EL</b></td>
+                    <td><b> SL</b></td>
+                    <td style="text-align: right"><%= result.leave_status%></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><b style="float: right"> total=</b></td>
+                    <td></td>
+                    <td></td>
+                    <td>0</td>
+                    <td style="text-align: right"><b><%= result.total%></b> </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><b style="float: right"> Total (A)=</b></td>
+                    <td style="text-align: right"><b> <%= result.total_a%></b></td>
+                    <td><b style="float: right"> Total (B)</b></td>
+                    <td style="text-align: right"><b> <%= result.total_b%></b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align: right"><b><%= result.final_salary%></b> </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <b> For Antier Solution Pvt. Ltd.</b>
+        </div><br>
+
+        Account Dept.
+    </div>
+    <button id="download">Download</button>
+    <script>
+        
+document.getElementById('download').onclick = function(){
+   print();
+
+
+// Variant
+// This one lets you improve the PDF sharpness by scaling up the HTML node tree to render as an image before getting pasted on the PDF.
+function print(quality = 1) {
+    
+		const filename  = 'ThisIsYourPDFFilename.pdf';
+
+		html2canvas(document.querySelector('#table_div'), 
+								{scale: quality}
+						 ).then(canvas => {
+			let pdf = new jsPDF('p', 'mm', 'a4');
+			pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+			pdf.save(filename);
+		});
+	}
+
+};
+      
+  
+    </script>
+</body>
+
+</html>

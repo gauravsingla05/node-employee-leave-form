@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title%></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+</head>
+<body>
+
+        <section>
+            
+    
+                <div class="main_content">
+                    
+                   <table id="table_id" class="display">
+                      
+                        <thead style="background-color:#a0cfff">   
+                                <tr >
+                                      <th >ID</th>
+                                      <th>Name</th> 
+                                      <th>Final Salary</th>
+                                      <th>View</th>
+                                   
+                               </tr>
+                        </thead>     
+                    
+                    <tbody>
+                        <% for(var data of result) { %>
+                          <tr>
+                               <td><%= data.user_id %></td>
+                               <td> <%= data.name %></td>
+                               <td><%= data.final_salary%></td>
+                               <td><a href="/salary_slip/<%= data.user_id%>">Slip</a></td>
+                               
+                          </tr>
+                           
+                        <%}%>
+                    </tbody>
+                   </table>
+                 
+                           
+                </div>
+                 
+                </section>     
+
+
+
+
+        <script>
+            $(document).ready( function () {
+            $('#table_id').DataTable();
+            } );
+       </script> 
+</body>
+</html>

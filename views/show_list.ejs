@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+</head>
+<body>
+   <section>
+            
+    
+    <div class="main_content">
+        
+       <table id="table_id" class="display">
+          
+            <thead style="background-color:#a0cfff">   
+                    <tr >
+                          <th >ID</th>
+                          <th>Name</th> 
+                          <th>Department</th>
+                          <th>Designation</th>
+                          <th>Leave Type</th>
+                          <th>Reason</th>
+                          <th>Applied Date</th>
+                          <th>Leave From</th>
+                          <th>Resumption Date</th>
+                          <th>Contact No</th>
+                          <th>Total days</th>
+                          <th>Information Status</th>
+                       
+                   </tr>
+            </thead>     
+        
+        <tbody>
+            <% for(var data of result) { %>
+              <tr>
+                   <td><%= data.user_id %></td>
+                   <td> <%= data.user_name %></td>
+                   <td><%= data.user_department%></td>
+                   <td><%= data.user_designation%></td>
+                   <td><%= data.type_of_leave%></td>
+                   <td><%= data.reason_for_leave%></td>
+                   <td><%= data.applied_date%></td>
+                   <td><%= data.leave_from%></td>
+                   <td><%= data.resumption_date%></td>
+                   <td><%= data.reachable_contact%></td>
+                   <td><%= data.no_of_days%></td>
+                   <td><%= data.information_status%></td>
+              </tr>
+               
+            <%}%>
+        </tbody>
+       </table>
+     
+               
+    </div>
+     
+    </section>     
+    <script>
+            $(document).ready( function () {
+                $('#table_id').DataTable();
+            } );
+               </script>
+</body>
+</html>
